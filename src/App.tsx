@@ -1,3 +1,4 @@
+import { BudgetCard } from "./components/transactions/BudgetCard";
 import { useMemo, useState } from "react";
 import { EmptyState } from "./components/common/EmptyState";
 import { StatCard } from "./components/common/StatCard";
@@ -14,6 +15,10 @@ function App() {
     "expense-transactions",
     sampleTransactions
   );
+  const [monthlyBudget, setMonthlyBudget] = useLocalStorage<number>(
+  "monthly-budget",
+  10000
+);
 
   const [searchText, setSearchText] = useState("");
   const [selectedType, setSelectedType] = useState<"All" | TransactionType>(
@@ -95,6 +100,11 @@ function App() {
           variant="expense"
         />
       </section>
+      <BudgetCard
+  budget={monthlyBudget}
+  totalExpense={totalExpense}
+  onBudgetChange={setMonthlyBudget}
+/>
 
       <section className="content-grid">
         <TransactionForm onAddTransaction={handleAddTransaction} />
