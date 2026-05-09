@@ -1,73 +1,74 @@
-# React + TypeScript + Vite
+# Personal Expense Tracker Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React TypeScript dashboard for tracking income, expenses, and current balance.
 
-Currently, two official plugins are available:
+This project helps users manage their personal finance transactions with search, filters, statistics, and localStorage persistence.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Add income and expense transactions
+- Track title, amount, category, type, date, and note
+- Search transactions by title or category
+- Filter transactions by Income or Expense
+- View total balance
+- View total income
+- View total expense
+- Delete transactions
+- Save data in browser using localStorage
+- Responsive modern dashboard UI
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+| Technology | Purpose |
+|---|---|
+| React | Frontend library |
+| TypeScript | Type safety |
+| Vite | Project setup and development |
+| CSS3 | Styling and responsive design |
+| LocalStorage | Browser data persistence |
+| Git & GitHub | Version control |
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Folder Structure
+
+```txt
+src/
+├── components/
+│   ├── common/
+│   │   ├── EmptyState.tsx
+│   │   └── StatCard.tsx
+│   └── transactions/
+│       ├── TransactionCard.tsx
+│       ├── TransactionFilters.tsx
+│       ├── TransactionForm.tsx
+│       └── TransactionList.tsx
+├── data/
+│   └── sampleTransactions.ts
+├── hooks/
+│   └── useLocalStorage.ts
+├── types/
+│   └── transaction.ts
+├── utils/
+│   └── formatters.ts
+├── App.tsx
+├── index.css
+└── main.tsx
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Main Concepts Used
+React components
+Props
+useState
+useMemo
+Form handling
+Conditional rendering
+List rendering
+Custom hook
+TypeScript types
+localStorage
+Responsive CSS
 ```
