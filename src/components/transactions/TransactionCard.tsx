@@ -38,3 +38,4 @@ export function TransactionCard({
     </article>
   );
 }
+
