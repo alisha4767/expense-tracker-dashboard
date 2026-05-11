@@ -24,7 +24,6 @@ export function TransactionCard({
           </p>
         </div>
       </div>
-
       <div className="transaction-right">
         <strong className={transaction.type.toLowerCase()}>
           {transaction.type === "Income" ? "+" : "-"}
